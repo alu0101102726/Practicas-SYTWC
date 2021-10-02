@@ -1,0 +1,17 @@
+ @mixin properties {
+    border-radius: 5px;
+    padding: 5px 20px;
+ }
+ 
+ @each $clase in header{
+     #{$clase} {
+        @include properties
+     }
+ } 
+ 
+ @each $clase in footer, feature, content {
+     .#{$clase} {
+        @include properties
+     }
+ }
+
