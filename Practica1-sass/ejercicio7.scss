@@ -1,0 +1,11 @@
+  $incr: 0px;
+  
+  @each $clase in header, footer {
+      .#{$clase} {
+        -webkit-border-radius: 5px + $incr;
+        -moz-border-radius:  5px + $incr;
+        border-radius:  5px + $incr;
+      }
+    $incr: $incr + 5px; 
+  }
+
