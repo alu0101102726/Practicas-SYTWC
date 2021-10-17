@@ -1,40 +1,34 @@
 
 const { series, parallel } = require('gulp');
 const gulp = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 
-gulp.task('browser-sync', function() {
+function browsersync() {
 	let files = [
 		'html/*.html',
-		'css/*.css',
+		'scss/*.scss',
 		'js/*.js'
 	];
 	browserSync.init({
-		server: { 
+		server: {
 			baseDir: "html",
 			index: "index.html"
-		}
-	});
-});
-
-gulp.task('browser-sync', function() {
-	browserSync.init({
+		},
 		ui: {
 			port: 8088	
 		},
 		port: 8080,
-		proxy: "10.6.128.23",
+		host: "10.6.128.23",
 		open: false
 	});
-});
+}
 
-gulp.task('watch', function() {
-	gulp.watch([
-		'css/*.css',
-		'html/*.html',
-		'js/*.js'
-	], ['browser-sync']);
-});
+function watch() {
+	gulp.watch('scss/*.scss', (done) => {
+		cssTranspile(done);
+	});
+}
 
 function clean(cb) {
   // body omitted
@@ -42,8 +36,9 @@ function clean(cb) {
 }
 
 function cssTranspile(cb) {
-  // body omitted
-  cb();
+  return gulp.src('scss/*.scss')
+	.pipe(sass().on('error', sass.logError))
+	.pipe(gulp.dest('./css/'));
 }
 
 function cssMinify(cb) {
@@ -73,12 +68,9 @@ function publish(cb) {
 
 exports.build = series(
   clean,
-  parallel(
-    cssTranspile,
-    series(jsTranspile, jsBundle)
-  ),
-  parallel(cssMinify, jsMinify),
-  publish
+  watch
+  //parallel(cssMinify, jsMinify),
+  //publish
 );
 
-gulp.task('default', series('browser-sync', 'watch'));
+exports.publish = browsersync;
