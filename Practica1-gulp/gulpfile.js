@@ -4,16 +4,22 @@ const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 
+function watch() {
+	gulp.watch('scss/*.scss', (done) => {
+		cssTranspile(done);
+	});
+}
+
 function browsersync() {
 	let files = [
 		'html/*.html',
 		'scss/*.scss',
-		'js/*.js'
+		'src/scripts/*.js'
 	];
 	browserSync.init({
 		server: {
-			baseDir: "html",
-			index: "index.html"
+			baseDir: "./",
+			index: "html/index.html"
 		},
 		ui: {
 			port: 8088	
@@ -21,13 +27,9 @@ function browsersync() {
 		port: 8080,
 		host: "10.6.128.23",
 		open: false
-	});
-}
-
-function watch() {
-	gulp.watch('scss/*.scss', (done) => {
-		cssTranspile(done);
-	});
+	});    
+    gulp.watch(files).on('change', browserSync.reload);
+    gulp.watch(files[1]).on('change', watch);
 }
 
 function clean(cb) {
@@ -38,7 +40,7 @@ function clean(cb) {
 function cssTranspile(cb) {
   return gulp.src('scss/*.scss')
 	.pipe(sass().on('error', sass.logError))
-	.pipe(gulp.dest('./css/'));
+	.pipe(gulp.dest('src/styles/'));
 }
 
 function cssMinify(cb) {
@@ -46,8 +48,13 @@ function cssMinify(cb) {
   cb();
 }
 
-function jsTranspile(cb) {
-  // body omitted
+function sourcemaps(cb) {
+  gulp.src('src/scripts/*.js')
+  .pipe(sourcemaps.init())
+	.pipe(plugin1())
+	.pipe(plugin2())
+  .pipe(sourcemaps.write('../maps'))
+  .pipe(gulp.dest('dist'));
   cb();
 }
 
@@ -61,16 +68,7 @@ function jsMinify(cb) {
   cb();
 }
 
-function publish(cb) {
-  // body omitted
-  cb();
-}
-
 exports.build = series(
   clean,
-  watch
-  //parallel(cssMinify, jsMinify),
-  //publish
+  parallel(browsersync, watch)
 );
-
-exports.publish = browsersync;
