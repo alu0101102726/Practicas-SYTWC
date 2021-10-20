@@ -5,7 +5,7 @@ html, body {
   background-color: #1c2329;
 }
 
-.myButton {
+.myButton, .buttonFormSend, .buttonFormReset {
   box-shadow: inset 0px 1px 0px 0px #ffffff;
   background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
   background-color: #ededed;
@@ -14,7 +14,7 @@ html, body {
   display: inline-block;
   cursor: pointer;
   color: #777777;
-  font-family: Arial;
+  font-family: sans-serif;
   font-size: 15px;
   font-weight: bold;
   padding: 6px 24px;
@@ -22,13 +22,27 @@ html, body {
   text-decoration: none;
   text-shadow: 0px 1px 0px #ffffff;
 }
-
-.myButon:hover {
-  background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+.myButton:hover, .buttonFormSend:hover, .buttonFormReset:hover {
+  background: linear-gradient(to bottom, #dfdfdf 5%, #afafaf 100%);
   background-color: #dfdfdf;
 }
+.myButton:active, .buttonFormSend:active, .buttonFormReset:active {
+  position: relative;
+}
 
-.myButon:active {
+.buttonFormReset:hover {
+  background: linear-gradient(to bottom, #dfdfdf 5%, #d1981e 100%);
+  background-color: #dfdfdf;
+}
+.buttonFormReset:active {
+  position: relative;
+}
+
+.buttonFormSend:hover {
+  background: linear-gradient(to bottom, #9e6161 5%, #f36f6f 100%);
+  background-color: #dfdfdf;
+}
+.buttonFormSend:active {
   position: relative;
 }
 
@@ -58,7 +72,6 @@ form li + li {
 }
 
 label {
-  /* Uniform size & alignment */
   display: inline-block;
   width: 90px;
   text-align: right;
@@ -71,13 +84,11 @@ input, textarea {
   border: 1px solid #999;
 }
 input:focus, textarea:focus {
-  border-color: #000;
+  border-color: red;
 }
 
 textarea {
-  /* Align multiline text fields with their labels */
   vertical-align: top;
-  /* Provide space to type some text */
   height: 5em;
 }
 
@@ -86,7 +97,7 @@ textarea {
   flex-direction: row;
 }
 
-.basicFlexCol, .rightside, .longtag, .products, .title, .section, .clientsection, .prodsection, .form {
+.basicFlexCol, .rightside, .longtag, .longtagContact, .longtagGaranties, .products, .title, .section, .clientsection, .prodsection, .form {
   display: flex;
   flex-direction: column;
 }
@@ -144,6 +155,7 @@ textarea {
 }
 
 .form {
+  background-color: #515c66;
   align-items: center;
   justify-content: center;
   margin: 1rem;
@@ -252,18 +264,18 @@ form p.client, form label.client {
   border: 2px solid #ccc;
 }
 
-.longtag {
+.longtag, .longtagContact, .longtagGaranties {
   margin: 1rem;
   padding: 1rem;
   text-align: center;
-  width: 100%;
   border: 2px solid #ccc;
+  border-radius: 5px;
 }
-.longtag img {
+.longtag img, .longtagContact img, .longtagGaranties img {
   width: 25px;
   height: 25px;
 }
-.longtag h1, .longtag h3, .longtag h2 {
+.longtag h1, .longtagContact h1, .longtagGaranties h1, .longtag h3, .longtagContact h3, .longtagGaranties h3, .longtag h2, .longtagContact h2, .longtagGaranties h2 {
   color: #ffffff;
   font-family: "Lato", sans-serif;
   font-size: 54px;
@@ -271,13 +283,13 @@ form p.client, form label.client {
   line-height: 58px;
   margin: 0 0 58px;
 }
-.longtag h2 {
+.longtag h2, .longtagContact h2, .longtagGaranties h2 {
   font-size: 38px;
 }
-.longtag h3 {
+.longtag h3, .longtagContact h3, .longtagGaranties h3 {
   font-size: 24px;
 }
-.longtag p, .longtag label {
+.longtag p, .longtagContact p, .longtagGaranties p, .longtag label, .longtagContact label, .longtagGaranties label {
   color: #adb7bd;
   font-family: "Lucida Sans", sans-serif;
   font-size: 16px;
@@ -285,9 +297,17 @@ form p.client, form label.client {
   text-indent: 30px;
   margin: 0;
 }
-.longtag p.client, .longtag label.client {
+.longtag p.client, .longtagContact p.client, .longtagGaranties p.client, .longtag label.client, .longtagContact label.client, .longtagGaranties label.client {
   font-weight: bold;
   padding-bottom: 10%;
+}
+
+.longtagGaranties {
+  background-color: #515c66;
+}
+
+.longtagContact {
+  background-color: #ccc;
 }
 
 .rightside {

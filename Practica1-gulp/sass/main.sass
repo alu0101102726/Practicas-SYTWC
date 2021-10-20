@@ -25,6 +25,7 @@
   @include text()
 
 .form 
+  background-color: $boxBackgroundColor
   align-items: center
   justify-content: center
   @include localization()
@@ -53,7 +54,7 @@ form
   @extend .basicFlexCol
   border: 1px solid #ccc
   border-radius: 25px
-  background-color: #515c66
+  background-color: $boxBackgroundColor
   box-shadow: 3px 7px
 
 .prodsection
@@ -81,8 +82,16 @@ form
   @include title()
   @include text()
   @extend .basicFlexCol
-  width: 100%
   border: 2px solid #ccc
+  border-radius: 5px
+
+.longtagGaranties
+  @extend .longtag
+  background-color: $boxBackgroundColor
+
+.longtagContact
+  @extend .longtag
+  background-color: #ccc
 
 .rightside 
   @extend .basicFlexCol

@@ -15,22 +15,50 @@ html, body {
   display:inline-block;
   cursor:pointer;
   color:#777777;
-  font-family:Arial;
+  font-family: sans-serif;
   font-size:15px;
   font-weight:bold;
   padding:6px 24px;
   margin-left:10%;
   text-decoration:none;
   text-shadow:0px 1px 0px #ffffff;
+
+  &:hover {
+    background:linear-gradient(to bottom, #dfdfdf 5%, #afafaf 100%);
+    background-color:#dfdfdf;
+  }
+
+  &:active {
+    position:relative;
+  }
 }
 
-.myButon:hover {
-  background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
-  background-color:#dfdfdf;
+.buttonFormReset {
+  @extend .myButton;
+
+  &:hover {
+    background:linear-gradient(to bottom, #dfdfdf 5%, #d1981e 100%);
+    background-color:#dfdfdf;
+  }
+
+  &:active {
+    position:relative;
+  }
+  
 }
 
-.myButon:active {
-	position:relative;
+.buttonFormSend {
+  @extend .myButton;
+
+  &:hover {
+    background:linear-gradient(to bottom, #9e6161 5%, #f36f6f 100%);
+    background-color:#dfdfdf;
+  }
+
+  &:active {
+    position:relative;
+  }
+  
 }
 
 .date {
@@ -59,7 +87,6 @@ form li + li {
 }
 
 label {
-  /* Uniform size & alignment */
   display: inline-block;
   width: 90px;
   text-align: right;
@@ -72,15 +99,12 @@ input, textarea {
   border: 1px solid #999;
 
   &:focus {
-    border-color: #000;
+    border-color: red;
   }
 }
 
 textarea {
-  /* Align multiline text fields with their labels */
   vertical-align: top;
-
-  /* Provide space to type some text */
   height: 5em;
 }
 
