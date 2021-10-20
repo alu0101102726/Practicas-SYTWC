@@ -30,4 +30,4 @@
   </ol>
 </details>
 
-Landing page: <a href="https://github.com/alu0101102726/Practicas-SYTWC/blob/main/Practica1-gulp/html/index.html">
+<a href="https://github.com/alu0101102726/Practicas-SYTWC/blob/main/Practica1-gulp/html/index.html">Landing Page</a>
