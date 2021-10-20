@@ -5,7 +5,7 @@ const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 
 function watch() {
-	gulp.watch('scss/*.scss', (done) => {
+	gulp.watch('sass/*.sass', (done) => {
 		cssTranspile(done);
 	});
 }
@@ -13,8 +13,7 @@ function watch() {
 function browsersync() {
 	let files = [
 		'html/*.html',
-		'scss/*.scss',
-		'src/scripts/*.js'
+		'sass/*.sass'
 	];
 	browserSync.init({
 		server: {
@@ -38,7 +37,7 @@ function clean(cb) {
 }
 
 function cssTranspile(cb) {
-  return gulp.src('scss/*.scss')
+  return gulp.src('sass/*.sass')
 	.pipe(sass().on('error', sass.logError))
 	.pipe(gulp.dest('src/styles/'));
 }

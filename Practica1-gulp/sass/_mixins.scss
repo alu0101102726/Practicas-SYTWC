@@ -1,0 +1,61 @@
+@use "_variables.scss";
+
+
+@mixin localization {  
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+@mixin title {
+  h1 { 
+    color: #ffffff; 
+    font-family: 'Lato', $myFont; 
+    font-size: 54px; 
+    font-weight: 300; 
+    line-height: 58px; 
+    margin: 0 0 58px; 
+  }
+
+  h2 { 
+    @extend h1;
+    font-size: 38px; 
+  }
+
+  h3 { 
+    @extend h1;
+    font-size: 24px; 
+  }
+}
+
+@mixin text {
+  p, label { 
+    color: #adb7bd; 
+    font-family: 'Lucida Sans', $myFont; 
+    font-size: 16px; 
+    line-height: 26px; 
+    text-indent: 30px; 
+    margin: 0; 
+    &.client {      
+      font-weight:bold;
+      padding-bottom: 10%;
+    }
+  }
+}
+
+@mixin links {  
+  a { 
+    color: #fe921f; 
+    text-decoration: underline; 
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
+
+@mixin socialmedia {
+  img {
+    width:25px;
+    height:25px;
+  }
+}

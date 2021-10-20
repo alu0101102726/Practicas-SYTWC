@@ -1,0 +1,98 @@
+@use "_base.scss"
+
+@import "_mixins.scss"
+@import "_variables.scss"
+
+.basicFlexRow 
+  display: flex
+  flex-direction: row
+
+.basicFlexCol 
+  display: flex
+  flex-direction: column
+
+.head 
+  @extend .basicFlexRow
+  @include localization()
+  @include title()
+
+.contenedor 
+  @extend .basicFlexRow
+
+.benefits 
+  @include localization()
+  @include title()
+  @include text()
+
+.form 
+  align-items: center
+  justify-content: center
+  @include localization()
+  @include title()
+  @extend .basicFlexCol
+  width: 40%
+  border: 2px solid #ccc
+  font-size: $myFontSize
+  font-family: $myFont
+
+img
+  border-radius: 50%
+
+form 
+  @include text()
+  margin: 0 auto
+  width: 500px
+  padding: 1em
+  border: 1px solid #CCC
+  border-radius: 1em
+
+.section
+  @include localization()
+  @include title()
+  @include text()
+  @extend .basicFlexCol
+  border: 1px solid #ccc
+  border-radius: 25px
+  background-color: #515c66
+  box-shadow: 3px 7px
+
+.prodsection
+  @extend .section
+  width: 33.3%
+
+.clientsection
+  @extend .section
+  width: 50%
+
+.title
+  @include localization()
+  @extend .basicFlexCol
+  width: 95%
+
+.products
+  @include localization()
+  @extend .basicFlexCol
+  width: 50%
+  border: 2px solid #ccc
+
+.longtag 
+  @include socialmedia()
+  @include localization()
+  @include title()
+  @include text()
+  @extend .basicFlexCol
+  width: 100%
+  border: 2px solid #ccc
+
+.rightside 
+  @extend .basicFlexCol
+  width: 60%
+
+#columns 
+  column-count:3
+  column-gap:20px
+  column-rule: 7px solid white
+
+#columnsContact
+  column-count:3
+  column-gap:20px
