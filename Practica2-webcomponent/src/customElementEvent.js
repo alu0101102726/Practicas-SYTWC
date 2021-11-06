@@ -8,43 +8,48 @@ class customElementName extends HTMLElement {
         
         super();
 
-        const options = {
-            uri: 'http://jsonstub.com/cursos',
-            json: true,
-            data: {
-               JsonStubUserKey: '9ba215cc-e27e-4fac-9d92-691e42bbe4c7',
-               JsonStubProjectKey: '67e794d4-7b2e-4bb8-ac3c-db50bdb9796d'
-            }
-        }
-
         document.getElementById("INFO").innerHTML="";
-        const shadow = this.attachShadow({ mode: 'closed' });
+        
+        const shadow = this.attachShadow({ mode: 'open' });
 
-        fetch(options.uri, {
+        fetch('http://jsonstub.com/cursos', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
-                "JsonStub-User-Key": options.data.JsonStubUserKey,
-                "JsonStub-Project-Key": options.data.JsonStubProjectKey
+                "JsonStub-User-Key": '9ba215cc-e27e-4fac-9d92-691e42bbe4c7',
+                "JsonStub-Project-Key": '67e794d4-7b2e-4bb8-ac3c-db50bdb9796d'
             }
         })
-        .then(function (response) {
-            response.forEach(element => {
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(element => {
+                var newDiv = document.createElement("div");
+                newDiv.className = "section";
+                newDiv.style = "margin: 1rem; padding: 1rem; text-align: center; border: 1px solid #ccc; border-radius: 25px; background-color: #515c66; box-shadow: 3px 7px;";
                 for (const key in element) {
-                    let nameCur = document.createElement("p");
-                    nameCur.innerHTML = element[key];
-                    nameCur.style = "color: white;";
-                    shadow.appendChild(nameCur);
+                    if(key == "image") {
+                        let img = document.createElement("img");
+                        img.src = element[key]
+                        newDiv.appendChild(img);
+                    }
+                    else {
+                        let title = document.createElement("h2");
+                        title.innerHTML = key ;
+                        title.style = "color: orange;";
+                        let nameCur = document.createElement("p");
+                        nameCur.innerHTML = element[key];
+                        nameCur.style = "color: white;";
+                        newDiv.appendChild(title);
+                        newDiv.appendChild(nameCur);
+                    }
                 }
-            });
+                shadow.appendChild(newDiv);
+            });           
+            
         })
         .catch(function (error) {
-            // handle error
             console.log(error);
         })
-        .then(function () {
-            // always executed
-        });
     }
 
     connectedCallback() {
@@ -55,21 +60,18 @@ class customElementName extends HTMLElement {
         console.log("Separado del DOM");
     }
 
-    adoptedCallback() {
-        console.log("Creado");
-    }
-
     attributeChangedCallback() {
+        updateStyle(this);
         console.log("Atributo cambiado");
     }
 
 };
 
-var addNameCur = document.getElementById("addWebcomp");
+let addNameCur = document.getElementById("addWebcomp");
 addNameCur.innerHTML = "Añadir webcomponent";
 addNameCur.style = "color: black;";
 addNameCur.onclick = function () {
-    webcomp = document.createElement('custom-element-event');
+    webcomp = new customElementName();
     document.getElementById("INFO").appendChild(webcomp);
 }
 customElements.define('custom-element-event', customElementName);
