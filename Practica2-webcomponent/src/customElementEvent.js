@@ -34,7 +34,7 @@ class customElementName extends HTMLElement {
             response.forEach(element => {
                 for (const key in element) {
                     let nameCur = document.createElement("p");
-                    nameCur.innerHTML = element.key;
+                    nameCur.innerHTML = element[key];
                     nameCur.style = "color: white;";
                     shadow.appendChild(nameCur);
                 }
