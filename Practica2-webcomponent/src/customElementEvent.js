@@ -1,5 +1,3 @@
-const axios = import('axios').default;
-
 class customElementName extends HTMLElement {
 
     static get observedAttributes() {
