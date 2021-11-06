@@ -14,6 +14,8 @@
     <br />
     <a href="https://github.com/alu0101102726/Practicas-SYTWC/tree/main/Practica2-webcomponent"><strong>Práctica 2 - WEB COMPONENTS »</strong></a>
     <br />
+    <a href="https://github.com/alu0101102726/Practicas-SYTWC/tree/main/Practica3-gatsby"><strong>Práctica 3 - GATSBY »</strong></a>
+    <br />
     <br />
     <a href="https://github.com/alu0101102726/Practicas-SYTWC/issues">Issues</a>
     ·
@@ -28,5 +30,6 @@
     <li><a href="https://github.com/alu0101102726/Practicas-SYTWC/tree/main/Practica1-gulp/README.md">Readme GULP + LANDING PAGE</a></li>
     <li><a href="https://github.com/alu0101102726/Practicas-SYTWC/tree/main/Practica1-sass/README.md">Readme SCSS EXCERCIRCES</a></li>
     <li><a href="https://github.com/alu0101102726/Practicas-SYTWC/blob/main/Practica2-webcomponent/README.md">Readme WEB COMPONENT</a></li>
+    <li><a href="https://github.com/alu0101102726/Practicas-SYTWC/blob/main/Practica3-gatsby/README.md">Readme GATSBY</a></li>
   </ol>
 </details>

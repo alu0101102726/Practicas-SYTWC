@@ -14,6 +14,8 @@
     <br />
     <a href="https://github.com/alu0101102726/Practicas-SYTWC/tree/main/Practica2-webcomponent"><strong>Práctica 2 - WEB COMPONENTS »</strong></a>
     <br />
+    <a href="https://github.com/alu0101102726/Practicas-SYTWC/tree/main/Practica3-gatsby"><strong>Práctica 3 - GATSBY »</strong></a>
+    <br />
     <br />
     <a href="https://github.com/alu0101102726/Practicas-SYTWC/issues">Issues</a>
     ·
