@@ -1,3 +1,5 @@
+const axios = require('axios').default;
+
 class customElementName extends HTMLElement {
 
     static get observedAttributes() {
@@ -5,37 +7,40 @@ class customElementName extends HTMLElement {
     }
 
     constructor() {
+        
         super();
 
+        const options = {
+            uri: 'http://jsonstub.com/cursos',
+            json: true,
+            data: {
+               JsonStubUserKey: '9ba215cc-e27e-4fac-9d92-691e42bbe4c7',
+               JsonStubProjectKey: '67e794d4-7b2e-4bb8-ac3c-db50bdb9796d'
+            }
+        }
+
         document.getElementById("INFO").innerHTML="";
-
-        let nameCur = document.createElement("p");
-        nameCur.innerHTML = "Nombre del curso: ";
-        nameCur.style = "color: white;";
-
-        let nameEvent = document.createElement("p");
-        nameEvent.innerHTML = "Nombre del evento: ";
-        nameEvent.style = "color: white;";
-
-        let dateEvent = document.createElement("p");
-        dateEvent.innerHTML = "Fecha del evento: ";
-        dateEvent.style = "color: white;";
-
-        let descEvent = document.createElement("p");
-        descEvent.innerHTML = "Descripcion del evento: ";
-        descEvent.style = "color: white;";
-
-        let timeEvent = document.createElement("p");
-        timeEvent.innerHTML = "Duración del evento: ";
-        timeEvent.style = "color: white;";
-
-
         const shadow = this.attachShadow({ mode: 'closed' });
-        shadow.appendChild(nameEvent);
-        shadow.appendChild(nameCur);
-        shadow.appendChild(dateEvent);
-        shadow.appendChild(descEvent);
-        shadow.appendChild(timeEvent);
+
+        axios.get(options.uri)
+            .then(function (response) {
+                response.forEach(element => {
+                    for (const key in element) {
+                        let nameCur = document.createElement("p");
+                        nameCur.innerHTML = element.name;
+                        nameCur.style = "color: white;";
+                        shadow.appendChild(nameCur);
+                    }
+                });
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .then(function () {
+                // always executed
+            });
+
     }
 
     connectedCallback() {
