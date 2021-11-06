@@ -12,12 +12,12 @@
     <br />
     <a href="https://github.com/alu0101102726/Practicas-SYTWC/tree/main/Practica1-gulp"><strong>Práctica 1 - GULP »</strong></a>
     <br />
-    <a href="https://github.com/alu0101102726/Practicas-SYTWC/tree/main/Practica1-gulp"><strong>Práctica 2 - WEB COMPONENTS »</strong></a>
+    <a href="https://github.com/alu0101102726/Practicas-SYTWC/tree/main/Practica2-webcomponent"><strong>Práctica 2 - WEB COMPONENTS »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/ULL-MII-SYTWS-2122/visual-studio-code-alu0101102726/issues">Issues</a>
+    <a href="https://github.com/alu0101102726/Practicas-SYTWC/issues">Issues</a>
     ·
-    <a href="https://github.com/ULL-MII-SYTWS-2122/visual-studio-code-alu0101102726/issues">Request Feature</a>
+    <a href="https://github.com/alu0101102726/Practicas-SYTWC/issues">Request Feature</a>
   </p>
 </p>
 

@@ -7,6 +7,7 @@ class customElementName extends HTMLElement {
     constructor() {
         
         super();
+        this.style = "red";
 
         document.getElementById("INFO").innerHTML="";
         
@@ -60,9 +61,11 @@ class customElementName extends HTMLElement {
         console.log("Separado del DOM");
     }
 
-    attributeChangedCallback() {
-        updateStyle(this);
-        console.log("Atributo cambiado");
+    attributeChangedCallback(name) {
+        console.log('attribute changed callback being executed now');
+        if (name === 'style') {
+            console.log("Atribute changed");
+        }
     }
 
 };
