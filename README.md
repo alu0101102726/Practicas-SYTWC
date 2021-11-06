@@ -27,5 +27,6 @@
   <ol>
     <li><a href="https://github.com/alu0101102726/Practicas-SYTWC/tree/main/Practica1-gulp/README.md">Readme GULP + LANDING PAGE</a></li>
     <li><a href="https://github.com/alu0101102726/Practicas-SYTWC/tree/main/Practica1-sass/README.md">Readme SCSS EXCERCIRCES</a></li>
+    <li><a href="https://github.com/alu0101102726/Practicas-SYTWC/blob/main/Practica2-webcomponent/README.md">Readme WEB COMPONENT</a></li>
   </ol>
 </details>
