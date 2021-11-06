@@ -29,5 +29,3 @@
     <li><a href="https://github.com/alu0101102726/Practicas-SYTWC/tree/main/Practica1-sass/README.md">Readme SCSS EXCERCIRCES</a></li>
   </ol>
 </details>
-
-<a href="https://github.com/alu0101102726/Practicas-SYTWC/blob/main/Practica1-gulp/html/index.html">Landing Page</a>
