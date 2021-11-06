@@ -22,25 +22,31 @@ class customElementName extends HTMLElement {
         document.getElementById("INFO").innerHTML="";
         const shadow = this.attachShadow({ mode: 'closed' });
 
-        axios.get(options.uri)
-            .then(function (response) {
-                response.forEach(element => {
-                    for (const key in element) {
-                        let nameCur = document.createElement("p");
-                        nameCur.innerHTML = element.name;
-                        nameCur.style = "color: white;";
-                        shadow.appendChild(nameCur);
-                    }
-                });
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-            .then(function () {
-                // always executed
+        fetch(options.uri, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "JsonStub-User-Key": options.data.JsonStubUserKey,
+                "JsonStub-Project-Key": options.data.JsonStubProjectKey
+            }
+        })
+        .then(function (response) {
+            response.forEach(element => {
+                for (const key in element) {
+                    let nameCur = document.createElement("p");
+                    nameCur.innerHTML = element.key;
+                    nameCur.style = "color: white;";
+                    shadow.appendChild(nameCur);
+                }
             });
-
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+        .then(function () {
+            // always executed
+        });
     }
 
     connectedCallback() {
