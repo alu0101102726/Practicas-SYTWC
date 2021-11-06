@@ -1,4 +1,4 @@
-const axios = require('axios').default;
+const axios = import('axios').default;
 
 class customElementName extends HTMLElement {
 
