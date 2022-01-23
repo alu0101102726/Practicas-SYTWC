@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import * as containerStyles from "./container.module.css"
 
-function EvilCat({name, planeta_natal, especie, estatura, afiliacion, imagen}) {
+function GoodCat({name, planeta_natal, especie, estatura, afiliacion, imagen}) {
     return (
         <div className={containerStyles.card}>
             <img src={imagen} alt={name}></img>
@@ -17,7 +17,7 @@ function EvilCat({name, planeta_natal, especie, estatura, afiliacion, imagen}) {
     )
 }
 
-EvilCat.propTypes = {
+GoodCat.propTypes = {
     name: PropTypes.string,
     planeta_natal: PropTypes.string,
     especie: PropTypes.string,
@@ -26,4 +26,4 @@ EvilCat.propTypes = {
     image: PropTypes.string
 }
 
-export default EvilCat;
+export default GoodCat;

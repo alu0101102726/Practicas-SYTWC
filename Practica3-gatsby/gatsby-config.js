@@ -53,7 +53,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `./content`
+        path: `./content/goodCat`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `./content/evilCat`
       }
     }
   ],

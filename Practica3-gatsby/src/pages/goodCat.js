@@ -1,20 +1,20 @@
 import React from "react"
-import EvilCat from "../components/evilCat"
+import GoodCat from "../components/goodCat"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import * as containerStyles from "../components/container.module.css"
 
 import { StaticQuery, graphql } from "gatsby"
 
-const EvilCatPage = () => (
+const GoodCatPage = () => (
     <Layout>
-        <SEO title="Evil Cats" />
-        <h1> El lado oscuro de los gatos </h1>
+        <SEO title="Good Cats" />
+        <h1> El lado luminoso de los gatos </h1>
         <div className={containerStyles.cards}>
             <div>
                 <StaticQuery
                     query = { graphql`
-                        query EvilCatQuery {
+                        query GoodCatQuery {
                             allDataJson {
                                 edges {
                                     node {
@@ -32,7 +32,7 @@ const EvilCatPage = () => (
                     }
 
                     render = { info => (
-                        <div> { GetEvilCat(info) } </div>
+                        <div> { GetGoodCat(info) } </div>
                     )}
                 />    
             </div>            
@@ -41,10 +41,10 @@ const EvilCatPage = () => (
     </Layout>
 )
 
-function GetEvilCat(info) {
+function GetGoodCat(info) {
     const auxArray = []
     info.allDataJson.edges.forEach(item => {
-        auxArray.push(<EvilCat
+        auxArray.push(<GoodCat
                         name = {item.node.name}
                         planeta_natal = {item.node.planeta_natal}
                         especie = {item.node.especie}
@@ -52,9 +52,9 @@ function GetEvilCat(info) {
                         afiliacion = {item.node.afiliacion}
                         imagen = {item.node.imagen}
                       >
-                      </EvilCat>)
+                      </GoodCat>)
     })
     return auxArray;
 }
 
-export default EvilCatPage;
+export default GoodCatPage;
