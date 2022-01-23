@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Darth Cathader",
+        "planeta_natal": "Tatooine",
+        "especie": "Humano",
+        "estatura": "2,03 metros",
+        "afiliacion": "Imperio",
+            "imagen": "https://losronroneosdemini.es/wp-content/uploads/2016/05/el-gato-Vader.jpg"
+    },
+    {
+        "name": "Caytlo Ren",
+        "planeta_natal": "Chandrila",
+        "especie": "Humano",
+        "estatura": "1.89 metros",
+        "afiliacion": "Imperio",
+            "imagen": "https://64.media.tumblr.com/956c763dba8b56f9f3c8504ee5e18762/tumblr_nu5p6vKO531rhz81io1_1280.jpg"
+    }, 
+    {
+        "name": "Conde Catooku",
+        "planeta_natal": "Serenno",
+        "especie": "Humano",
+        "estatura": "1.96 metros",
+        "afiliacion": "Sith",
+            "imagen": "https://i.ytimg.com/vi/4Z3r9X8OahA/maxresdefault.jpg"
+    }
+    ]
