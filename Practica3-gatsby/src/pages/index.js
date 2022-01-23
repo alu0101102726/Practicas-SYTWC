@@ -16,9 +16,6 @@ const IndexPage = () => (
         alt="Gato que aporrea el teclado intensamente"
       />
     </div>
-    <Link  tabIndex="0" to="/page-2/">Ir a la página 2</Link>
-    <br/>
-    <Link  tabIndex="0" to="/using-typescript/">Ir a Usando Typescript</Link>
     <br/>
     <Link  tabIndex="0" to="/evilCat"> LADO OSCURO </Link>
     <br/>
