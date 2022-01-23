@@ -6,7 +6,7 @@
     "plugins": [
         "jsx-a11y"
     ],
-    "rules": {
+    "rules": {        
     },
     "extends": [
         "plugin:jsx-a11y/recommended"

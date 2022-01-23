@@ -1,16 +1,26 @@
 module.exports = {
+  pathPrefix: "/Practicas-SYTWC",
   siteMetadata: {
-    title: `Proyecto prueba`,
+    title: `El último gato`,
+    langKeyDefault: "es",
     description: `Kick off your next, great Gatsby project with this default starter with TailwindCSS and common dev tools. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `Carlos `,    
+    author: `Carlos Díaz Calzadilla`,    
     menuLinks:[
       {
-       name:'home',
+       name:'Página principal',
        link:'/'
       },
       {
-       name:'page2',
+       name:'Página 2',
        link:'/page-2'
+      },
+      {
+       name:'LADO OSCURO',
+       link:'/evilCat'
+      },
+      {
+       name:'LADO LUMINOSO',
+       link:'/goodCat'
       }
     ]
   },
@@ -24,6 +34,15 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-i18n`,
+      options: {
+        langKeyDefault: 'en',
+        langKeyForNull: 'en',
+        prefixDefault: false,
+        useLangKeyLayout: false,
       },
     },
     `gatsby-plugin-image`,
@@ -53,14 +72,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `./content/goodCat`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `data`,
-        path: `./content/evilCat`
+        path: `${__dirname}/src/data/`
       }
     }
   ],

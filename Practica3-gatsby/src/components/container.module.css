@@ -1,10 +1,3 @@
-  .cards {
-    display: flex;
-    flex-direction: column;
-    flex-flow: row wrap;
-    align-items: center;
-  }
-  
   .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -17,4 +10,11 @@
   
   .container {
     padding: 2px 16px;
+  }
+
+  .div {
+    border: "10px solid #3EC483";
+    background: "#5DEAA8";;
+    padding: "10px";;
+    margin: "10px";
   }

@@ -2,7 +2,6 @@ import React from "react"
 import EvilCat from "../components/evilCat"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import * as containerStyles from "../components/container.module.css"
 
 import { StaticQuery, graphql } from "gatsby"
 
@@ -10,40 +9,35 @@ const EvilCatPage = () => (
     <Layout>
         <SEO title="Evil Cats" />
         <h1> El lado oscuro de los gatos </h1>
-        <div className={containerStyles.cards}>
-            <div>
-                <StaticQuery
-                    query = { graphql`
-                        query EvilCatQuery {
-                            allDataJson {
-                                edges {
-                                    node {
-                                        name
-                                        planeta_natal
-                                        especie
-                                        estatura
-                                        afiliacion
-                                        imagen
-                                    }
-                                }
+        <StaticQuery 
+            query = { graphql`
+                query EvilCatQuery {
+                    allEvilCatJson {
+                        edges {
+                            node {
+                                name
+                                planeta_natal
+                                especie
+                                estatura
+                                afiliacion
+                                imagen
                             }
                         }
-                    `            
                     }
+                }
+            `            
+            }
 
-                    render = { info => (
-                        <div> { GetEvilCat(info) } </div>
-                    )}
-                />    
-            </div>            
-        </div>
-        
+            render = { info => (
+                <div> { GetEvilCat(info) } </div>
+            )}
+        />        
     </Layout>
 )
 
 function GetEvilCat(info) {
     const auxArray = []
-    info.allDataJson.edges.forEach(item => {
+    info.allEvilCatJson.edges.forEach(item => {
         auxArray.push(<EvilCat
                         name = {item.node.name}
                         planeta_natal = {item.node.planeta_natal}
