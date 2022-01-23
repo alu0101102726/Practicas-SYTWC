@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import EVENT from "../components/event"
-import EVILCATS from "../components/evilCats"
+import EvilCats from "../components/evilCats"
 
 const IndexPage = () => (
   <Layout>
@@ -18,9 +18,14 @@ const IndexPage = () => (
         alt="programmer cat"
       />
     </div>
-    <Link to="/page-2/">Ir a la página 2</Link>    
-    <EVILCATS></EVILCATS>
+    <Link to="/page-2/">Ir a la página 2</Link>
     <br/>
+    <button id="evilCatsBtn"> Botón </button>
+    <br/>
+    <div id="Evilcats">
+
+    </div>
+    <evil-cats-events></evil-cats-events>
     <Link to="/using-typescript/">Ir a "Using TypeScript"</Link>
     <EVENT name="Guerra de la Independencia Española" date="1808 y 1814" description="Descripcion: La guerra de la Independencia Española fue un conflicto bélico que se dio entre 1808 y 1814 dentro del contexto de las guerras napoleónicas, que enfrentó a las potencias aliadas de España, Reino Unido y Portugal contra el Primer Imperio francés, cuya pretensión era la de instalar en el trono español al hermano de Napoleón, José Bonaparte, tras las abdicaciones de Bayona.
 
