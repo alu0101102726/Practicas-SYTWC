@@ -8,8 +8,8 @@ import { StaticQuery, graphql } from "gatsby"
 const EvilCatPage = () => (
     <Layout>
         <SEO title="Evil Cats" />
-        <h1> El lado oscuro de los gatos </h1>
-        <StaticQuery 
+        <h1 tabIndex="0" aria-level="1"> El lado oscuro de los gatos </h1>
+        <StaticQuery tabIndex="0"
             query = { graphql`
                 query EvilCatQuery {
                     allEvilCatJson {
@@ -38,7 +38,7 @@ const EvilCatPage = () => (
 function GetEvilCat(info) {
     const auxArray = []
     info.allEvilCatJson.edges.forEach(item => {
-        auxArray.push(<EvilCat
+        auxArray.push(<EvilCat tabIndex="0"
                         name = {item.node.name}
                         planeta_natal = {item.node.planeta_natal}
                         especie = {item.node.especie}

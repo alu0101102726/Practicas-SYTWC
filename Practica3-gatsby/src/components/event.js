@@ -2,7 +2,7 @@ import React from "react"
 
 function Event({name, date, description}) {
     return (
-        <div style={{
+        <div tabIndex="0" style={{
             border: "10px solid #3EC483",
             background: "#5DEAA8",
             padding: "10px",

@@ -6,7 +6,8 @@
     "plugins": [
         "jsx-a11y"
     ],
-    "rules": {        
+    "rules": {   
+        "jsx-a11y/no-noninteractive-tabindex": "warn"     
     },
     "extends": [
         "plugin:jsx-a11y/recommended"

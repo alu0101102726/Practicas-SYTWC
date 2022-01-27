@@ -5,10 +5,10 @@ import {card, container} from "./container.module.css"
 function GoodCat({name, planeta_natal, especie, estatura, afiliacion, imagen}) {
     const imageName = "imagen" + name
     return (
-        <div className={card}>
+        <div className={card} tabIndex="0" aria-label="Gato Bueno">
             <img src={imagen} alt={imageName}></img>
             <div className={container}>
-                <p> Es un {especie} y nacío en {planeta_natal}. Tiene una estatura de {estatura}  y 
+                <p tabIndex="0"> Es un {especie} y nacío en {planeta_natal}. Tiene una estatura de {estatura}  y 
                     su afiliación es {afiliacion}
                 </p>
             </div>

@@ -9,8 +9,8 @@ import EVENT from "../components/event"
 const IndexPage = () => (
   <Layout>
     <SEO title="Fuerza gatuna" />
-    <h1> Práctica Gastby</h1>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+    <h1 tabIndex="0" aria-level="1"> Práctica Gastby</h1>
+    <div tabIndex="0" style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <StaticImage  tabIndex="0"
         src="../images/unnamed.gif"
         alt="Gato que aporrea el teclado intensamente"

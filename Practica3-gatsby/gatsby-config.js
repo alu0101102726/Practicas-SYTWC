@@ -1,3 +1,14 @@
+const path = require("path");
+
+const gatsbyRequiredRules = path.join(
+  process.cwd(),
+  "node_modules",
+  "gatsby",
+  "dist",
+  "utils",
+  "eslint-rules"
+);
+
 module.exports = {
   pathPrefix: "/Practicas-SYTWC",
   siteMetadata: {
@@ -9,10 +20,6 @@ module.exports = {
       {
        name:'Página principal',
        link:'/'
-      },
-      {
-       name:'Página 2',
-       link:'/page-2'
       },
       {
        name:'LADO OSCURO',
